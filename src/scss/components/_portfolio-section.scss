@@ -1,0 +1,12 @@
+.portfolio-section {
+  padding: 50px;
+  background-color: var(--color-light);
+  &__title {
+    max-width: 710px;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+  }
+}
