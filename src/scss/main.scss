@@ -1,16 +1,23 @@
 // базовые подключения
-@import "vars";
-@import "mixins";
-@import "fonts";
-@import "settings";
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'settings';
 
 // подключения компонентов страницы
-@import "./components/header";
-
+@import './components/header';
+@import './components/nav';
+@import './components/header-content';
+@import './components/hero';
+@import './components/video-block';
+@import './components/about-section';
+@import './components/mission';
+@import './components/services-section';
+@import './components/form-field';
 // тестовые стили, удалите их
-.page__body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--vh);
-}
+// .page__body {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: var(--vh);
+// }

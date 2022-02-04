@@ -1,0 +1,111 @@
+.mission {
+  background-color: var(--color-light);
+
+  &__list {
+    margin-bottom: 36px;
+    --mission-gap: 94px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--mission-gap) * 2);
+  }
+
+  &__item {
+    position: relative;
+    text-align: center;
+    background-position: top center;
+    padding-top: 71px;
+    background-repeat: no-repeat;
+    background-size: 48px 48px;
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        right: calc(-1 * var(--mission-gap));
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-image: url("../img/divider.svg");
+        background-position: center;
+      }
+    }
+
+    &--quality {
+      background-image: url("../img/quality.svg");
+    }
+
+    &--safety {
+      background-image: url("../img/safety.svg");
+    }
+
+    &--comfort {
+      background-image: url("../img/comfort.svg");
+    }
+  }
+  &__subtitle,
+  &__descr {
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 150%;
+    font-weight: 700;
+    color: var(--color-dark-gray);
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 160%;
+    font-weight: 400;
+    color: var(--color-storm);
+  }
+
+  .btn {
+    &--fill {
+      font-weight: 700;
+      color: var(--color-light);
+      font-size: 14px;
+      line-height: 46px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 0px 32px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      border-radius: 4px;
+      background-color: var(--color-primary);
+    }
+  }
+}
+
+.know-form {
+  position: relative;
+  top: 92px;
+  border-radius: 4px;
+  padding: 48px 60px;
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  background: var(--color-light);
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 28px;
+    line-height: 150%;
+    font-weight: 700;
+    color: var(--color-ebony);
+  }
+  &__content {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__field {
+    margin-right: 24px;
+  }
+}

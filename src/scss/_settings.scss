@@ -14,11 +14,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-.page__body {
+body {
   margin: 0;
-  min-width: 320px;
-  min-height: 100%;
   font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
 }
 
 img {
@@ -104,4 +104,97 @@ a {
 
 .page--ios .dis-scroll {
   position: relative;
+}
+
+.main-title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 130%;
+  letter-spacing: 1px;
+  color: var(--color-ebony);
+  text-transform: uppercase;
+
+  span {
+    color: var(--color-primary);
+  }
+
+  &--home {
+    color: var(--color-light);
+  }
+}
+
+.main-desc {
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--color-storm);
+  margin: 0;
+
+  &--home {
+    color: var(--color-light);
+    margin-bottom: 40px;
+  }
+}
+
+.btns-main {
+  display: flex;
+  .btn {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 15px 39px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--color-light);
+    border-radius: 4px;
+    &--fill {
+      background-color: var(--color-primary);
+    }
+    &--stroke {
+      border-width: 1px;
+      border-style: solid;
+      &-light {
+        border-color: var(--color-light);
+      }
+    }
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+  }
+}
+
+.title,
+.descr {
+  margin: 0;
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 130%;
+  color: var(--color-ebony);
+}
+
+.descr {
+  font-size: 18px;
+  margin-bottom: 60px;
+  line-height: 150%;
+  font-weight: 400;
+  color: var(--color-storm);
+}
+
+.section-offset {
+  margin-top: 120px;
 }
