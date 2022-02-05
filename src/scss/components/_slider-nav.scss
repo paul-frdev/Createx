@@ -1,8 +1,10 @@
 .slider-nav {
   @include flex-v-center;
 
+  position: relative;
+  z-index: 15;
   &__btn {
-   @include flex-all-center;
+    @include flex-all-center;
     width: 48px;
     height: 48px;
     transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
@@ -20,5 +22,17 @@
       color: var(--color-light);
       background-color: var(--color-primary);
     }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: inherit;
+    left: 0;
+    &::after {
+      content: "";
+    }
+  }
+  .swiper-button-next {
+    margin-right: 6px;
   }
 }
