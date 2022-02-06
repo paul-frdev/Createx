@@ -36,3 +36,8 @@
     margin-right: 6px;
   }
 }
+
+.slider-nav__btn.swiper-button-disabled {
+  opacity: .4;
+  pointer-events: none;
+}

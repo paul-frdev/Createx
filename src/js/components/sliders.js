@@ -1,24 +1,17 @@
 import Swiper, { Navigation } from 'swiper';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
 
+const portSlider = document.querySelector('.portfolio-section__items');
 const bodyStyles = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyles.getPropertyValue('--grid-gap'));
-const portSlider = document.querySelector('.portfolio-section__items');
 
 const portfolioSlider = new Swiper(portSlider, {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: gap,
-  loop: true,
-  modules: [Navigation],
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
   on: {
     init: function () {
-      console.log('swip init');
-
       const activeSlide = portSlider.querySelector('.swiper-slide-active');
-      console.log('swiper-slide-active');
 
       const nextActiveSlide = activeSlide.nextElementSibling;
 
@@ -27,27 +20,51 @@ const portfolioSlider = new Swiper(portSlider, {
       activeSlide.classList.add('slider-visible');
       nextActiveSlide.classList.add('slider-visible');
       nextNextActiveSlide.classList.add('slider-visible');
+    },
+  },
+  modules: [Navigation],
+  navigation: {
+    nextEl: '.portfolio-section__next',
+    prevEl: '.portfolio-section__prev',
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3,
     }
   }
 });
 
-portfolioSlider.on('slideChange', function () {
-  console.log('slideChange');
-
+document.querySelector('.portfolio-section__prev').addEventListener('click', () => {
   const activeSlide = portSlider.querySelector('.swiper-slide-next');
-  console.log('swiper-slide-active');
+
+  document.querySelectorAll('.portfolio-section__items .swiper-slide').forEach(el => {
+    el.classList.remove('slider-visible');
+  });
+
+  if (activeSlide.previousElementSibling) {
+    const nextActiveSlide = activeSlide.previousElementSibling;
+    activeSlide.classList.add('slider-visible');
+    nextActiveSlide.classList.add('slider-visible');
+    activeSlide.nextElementSibling.classList.add('slider-visible');
+  }
+});
+
+document.querySelector('.portfolio-section__next').addEventListener('click', () => {
+  const activeSlide = portSlider.querySelector('.swiper-slide-active');
 
   const nextActiveSlide = activeSlide.nextElementSibling;
 
   const nextNextActiveSlide = nextActiveSlide.nextElementSibling;
 
-  document.querySelectorAll('.portfolio-section__items .swiper-slide').forEach(elem => {
-    elem.classList.remove('slider-visible');
-  })
+  document.querySelectorAll('.portfolio-section__items .swiper-slide').forEach(el => {
+    el.classList.remove('slider-visible');
+  });
 
   activeSlide.classList.add('slider-visible');
   nextActiveSlide.classList.add('slider-visible');
   nextNextActiveSlide.classList.add('slider-visible');
 });
-
 
