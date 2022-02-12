@@ -1,7 +1,6 @@
-import Swiper, { Navigation } from 'swiper';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
+import Swiper from 'swiper';
 
+console.log('slider');
 const portSlider = document.querySelector('.portfolio-section__items');
 const bodyStyles = window.getComputedStyle(document.body);
 const gap = parseInt(bodyStyles.getPropertyValue('--grid-gap'));
@@ -22,7 +21,6 @@ const portfolioSlider = new Swiper(portSlider, {
       nextNextActiveSlide.classList.add('slider-visible');
     },
   },
-  modules: [Navigation],
   navigation: {
     nextEl: '.portfolio-section__next',
     prevEl: '.portfolio-section__prev',
