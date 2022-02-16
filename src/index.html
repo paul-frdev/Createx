@@ -6,18 +6,22 @@
 <body class="page__body">
   <div class="site-container">
     @include('partials/header.html')
-    @include('partials/hero.html')
-    @include('partials/about-section.html')
-    @include('partials/mission.html')
-    @include('partials/services-section.html')
-    @include('partials/portfolio-section.html')
+    <main>
+      @include('partials/hero.html')
+      @include('partials/about-section.html')
+      @include('partials/mission.html')
+      @include('partials/services-section.html')
+      @include('partials/portfolio-section.html')
+      @include('partials/partners.html')
+      @include('partials/testimonials.html')
+      @include('partials/facts.html')
+      @include('partials/recent-news.html')
+      @include('partials/contacts-section.html')
+    </main>
     @include('partials/footer.html')
-    @include('partials/partners.html')
-    @include('partials/testimonials.html')
-    @include('partials/facts.html')
     <!-- @include('html/h1.html') пример include -->
   </div>
-  <!-- <script src="js/main.js"></script> -->
+  <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -15,11 +15,17 @@
     border: 1px solid #d7dadd;
     box-sizing: border-box;
     border-radius: 4px;
-    background: #F4F5F7;
+    background: #f4f5f7;
     padding-left: 20px;
 
     &::placeholder {
       color: #9a9ca5;
+    }
+
+    &--large {
+      height: 66px;
+      resize: none;
+      padding-top: 10px;
     }
   }
 
@@ -27,6 +33,15 @@
     flex-grow: 1;
     .form-field__input {
       width: 100%;
+    }
+  }
+
+  &--gray {
+    width: 100%;
+
+    .form-field__input {
+      width: 100%;
+      background-color: #F4F5F7;
     }
   }
 }
