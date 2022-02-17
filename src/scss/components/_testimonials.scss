@@ -1,7 +1,7 @@
 .testimonials {
   padding: 97px;
   padding-bottom: 0;
-  background-color: #F4F5F7;
+  background-color: #f4f5f7;
 
   &__container {
     display: flex;
@@ -24,9 +24,12 @@
   }
 
   &__slider-nav {
-    position: absolute;
-    bottom: 30px;
-    right: 0;
+    bottom: 23px;
+    left: 490px;
+  }
+
+  &__prev {
+    margin-right: 10px;
   }
 
   .slider-nav .swiper-button-next,
