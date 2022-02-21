@@ -3,6 +3,10 @@
 
   position: relative;
   z-index: 15;
+
+  @include mobile {
+    margin-right: auto;
+  }
   &__btn {
     @include flex-all-center;
     width: 48px;

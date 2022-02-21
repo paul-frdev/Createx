@@ -2,8 +2,14 @@
   padding-top: 212px;
   padding-bottom: 80px;
   background-image: url("../img/services-bg.jpg");
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
+  background-size: cover;
+
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
 }
 
 .services-list {
@@ -11,6 +17,17 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 80px;
+
+  @include tablet {
+    margin-bottom: 20px;
+    &__item {
+      grid-column: 2 span;
+
+      @include mobile {
+        grid-column: 10 span;
+      }
+    }
+  }
 }
 
 .services-item {
@@ -80,6 +97,10 @@
     font-weight: 700;
     color: var(--color-ebony);
     transition: color 0.3s ease-in-out;
+
+    @include desktop {
+      font-size: 18px;
+    }
   }
 
   &--construct {

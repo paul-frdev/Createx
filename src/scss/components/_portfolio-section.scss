@@ -2,6 +2,10 @@
   padding: 120px 0;
   background-color: var(--color-light);
 
+  @include desktop {
+    padding: 55px 0;
+  }
+
   &__container {
     max-width: 1260px;
     overflow: hidden;
@@ -10,29 +14,26 @@
     margin: 0;
     max-width: 710px;
     padding-bottom: 12px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
   &__top {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 132px;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__items {
     padding: 0 100px 100px 100px;
     margin: -100px;
-    height: 663px;
-
-    // .swiper-slide {
-    //   opacity: 0;
-    //   visibility: hidden;
-    //   transition: opacity .3s ease-in-out, visibility .3s;
-    // }
-
-    // .slider-visible {
-    //   opacity: 1;
-    //   visibility: visible;
-    // }
+    height: 592px;
   }
 }
 

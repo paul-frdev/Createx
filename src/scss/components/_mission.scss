@@ -1,12 +1,26 @@
 .mission {
   background-color: var(--color-light);
 
+  @include mobile {
+    padding-top: 0;
+  }
+
   &__list {
     margin-bottom: 36px;
     --mission-gap: 94px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: calc(var(--mission-gap) * 2);
+
+    @include tablet {
+      --mission-gap: 30px;
+    }
+    @include small-tablet {
+      --mission-gap: 10px;
+    }
+    @include mobile {
+      display: block;
+    }
   }
 
   &__item {
@@ -27,6 +41,9 @@
         height: 100%;
         background-image: url("../img/divider.svg");
         background-position: center;
+      }
+      @include mobile {
+        margin-bottom: 30px;
       }
     }
 
@@ -77,6 +94,10 @@
       border-radius: 4px;
       background-color: var(--color-primary);
     }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
@@ -91,21 +112,49 @@
     0px 4px 4px -4px rgba(30, 33, 44, 0.03);
   background: var(--color-light);
 
+  @include tablet {
+    top: 0;
+  }
+  @include small-tablet {
+    padding: 48px 30px;
+  }
+
   &__title {
-    margin: 0;
     text-align: center;
-    margin-bottom: 32px;
-    font-size: 28px;
-    line-height: 150%;
-    font-weight: 700;
-    color: var(--color-ebony);
   }
   &__content {
     display: flex;
     align-items: flex-end;
+    @include tablet {
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .form-field--big {
+        flex-grow: 0;
+      }
+
+      & > * {
+        margin-right: 0 !important;
+        margin-bottom: 20px;
+        width: 49%;
+
+        .form-field__input {
+          width: 100%;
+        }
+      }
+    }
+    @include mobile {
+      flex-direction: column;
+      > * {
+        margin-bottom: 7px;
+      }
+    }
   }
 
   &__field {
     margin-right: 24px;
+    @include mobile {
+      width: 100%;
+    }
   }
 }

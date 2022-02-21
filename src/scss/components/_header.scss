@@ -6,6 +6,23 @@
   }
   &__nav {
     margin-left: -100px;
+
+    @include desktop {
+      margin-left: 0;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  .logo {
+    @include desktop {
+      max-width: 100px;
+    }
+    @include tablet {
+      max-width: none;
+    }
   }
   &--main {
     background-color: var(--color-light);

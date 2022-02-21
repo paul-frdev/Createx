@@ -20,6 +20,10 @@
 
     &::placeholder {
       color: #9a9ca5;
+
+      @include mobile {
+        font-size: 12px;
+      }
     }
 
     &--large {

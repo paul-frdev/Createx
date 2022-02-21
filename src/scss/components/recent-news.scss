@@ -12,6 +12,15 @@
     grid-template-rows: repeat(2, 255px);
     gap: var(--grid-gap);
     margin-bottom: 80px;
+
+    @include tablet {
+      grid-template-rows: initial;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 25px;
+    }
   }
 
   &__item {
@@ -19,6 +28,23 @@
     &:first-child {
       grid-column: 7 span;
       grid-row: 2 span;
+
+      @include tablet {
+        grid-column: 12 span;
+        grid-row: 1;
+      }
+
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+
+    @include tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
     }
   }
 }
@@ -79,6 +105,13 @@
   &--small {
     .recent-article__descr {
       display: none;
+    }
+  }
+
+  &__img {
+    @include tablet {
+      width: 100%;
+      object-fit: cover;
     }
   }
 

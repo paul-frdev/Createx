@@ -14,6 +14,14 @@
     background-repeat: no-repeat;
     background-size: 40px 40px;
     padding-left: 60px;
+
+    @include desktop {
+      padding-left: 45px;
+    }
+
+    @include tablet {
+      display: none;
+    }
     &__caption {
       font-weight: 700;
       font-size: 14px;
@@ -26,6 +34,10 @@
       font-size: 18px;
       line-height: 150%;
       color: var(--color-dark-gray);
+
+      @include desktop {
+        font-size: 16px;
+      }
     }
     &--call {
       background-image: url('../img/phone.svg');

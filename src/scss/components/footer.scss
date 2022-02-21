@@ -11,10 +11,19 @@
 
   &__logo {
     margin-right: 60px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &__left {
     grid-column: 7 span;
+
+    @include mobile {
+      grid-column: 11 span;
+    }
+
   }
 
   &__top {
@@ -34,18 +43,36 @@
 
   &__form {
     grid-column: 5 span;
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      grid-column: 10 span;
+    }
   }
 
   &__address {
     grid-column: 4 span;
+
+    @include mobile {
+      grid-column: 8 span;
+    }
   }
 
   &__nav {
     grid-column: 8 span;
+    @include small-tablet {
+      padding-left: 24px;
+    }
+
+    @include mobile {
+      grid-column: 10 span;
+    }
   }
 
   &__copyright {
-    grid-column: 12 span;
+    grid-column: 10 span;
   }
 }
 
@@ -61,8 +88,11 @@
 
   &__items {
     @include flex-v-center;
-
     margin-bottom: 15px;
+
+    @include mobile {
+      max-width: 300px;
+    }
   }
 
   .form-field {
@@ -142,9 +172,22 @@
   padding-top: 20px;
   padding-left: 54px;
 
+  @include mobile {
+    flex-direction: column;
+  }
+
   &__col {
     &:not(:last-child) {
       margin-right: 125px;
+
+      @include small-tablet {
+        margin-right: 65px;
+      }
+
+      @include mobile {
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
     }
   }
 
@@ -160,6 +203,10 @@
       margin-bottom: 4px;
     }
   }
+
+  @include mobile {
+    padding-left: 0;
+  }
 }
 
 .footer-copyright {
@@ -171,7 +218,7 @@
 
   span {
     padding-left: 22px;
-    background-image: url('../img/heard.svg');
+    background-image: url("../img/heard.svg");
     background-position: 2px center;
     background-repeat: no-repeat;
     background-size: 16px 16px;

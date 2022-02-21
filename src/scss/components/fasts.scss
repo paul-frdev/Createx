@@ -2,21 +2,30 @@
   background-color: var(--color-light);
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
-    min-width: 570px;
+    width: 100%;
     min-height: 1065px;
-    background-image: url('../img/facts-bg.png');
+    background-image: url("../img/facts-bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  @include mobile {
+    &::before {
+      min-height: 100%;
+    }
   }
 
   &__container {
     padding-top: 180px;
     padding-bottom: 100px;
+
+    @include mobile {
+      padding-top: 60px;
+    }
   }
   &__title {
     margin-bottom: 62px;
@@ -29,10 +38,31 @@
     gap: 48px;
     max-width: 736px;
     margin: 0 auto;
+
+    @include small-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__item {
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
   }
 }
 
 .facts-elem {
+  @include small-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   &__circle {
     width: 148px;
     height: 148px;
@@ -63,15 +93,15 @@
     }
 
     &--color-two {
-      --progress-stroke: #F52F6E;
+      --progress-stroke: #f52f6e;
     }
 
     &--color-three {
-      --progress-stroke: #5A87FC;
+      --progress-stroke: #5a87fc;
     }
 
     &--color-four {
-      --progress-stroke: #03CEA4;
+      --progress-stroke: #03cea4;
     }
   }
 
