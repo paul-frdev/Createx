@@ -1,4 +1,3 @@
-console.log('components');
-
-import './components/sliders';
-import './components/progress';
+// import './components/sliders';
+// import './components/progress';
+// import scrolling from './components/scrolling';
