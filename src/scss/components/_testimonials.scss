@@ -1,7 +1,7 @@
 .testimonials {
   padding: 97px;
   padding-bottom: 0;
-  background-color: #f4f5f7;
+  background-color: var(--color-athens);
 
   @include desktop {
     padding: 97px 50px 0 80px;
